@@ -7,7 +7,7 @@ class WineClassifier(nn.Module):
         self.hidden = nn.Linear(input_size, hidden_size)
         self.relu = nn.ReLU()
         self.out = nn.Linear(hidden_size, out_size)
-        self.softmax = nn.Softmax()
+        self.softmax = nn.Softmax(dim=1)
         
     def forward(self, X):
         feature = self.relu(self.hidden(X))
